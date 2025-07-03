@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bob Marley X GAS Collection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #E42D2D, #F4F43E, #2E8B57, #1A1A1A);
+      color: #FFF;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    header {
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 30px 0;
+      color: #FFF;
+      text-shadow: 2px 2px 4px #000;
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .parallax-section {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: url('./bob-marley.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-attachment: fixed;
+    }
+
+    .parallax-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .parallax-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #FFF;
+      max-width: 1000px;
+      padding: 20px;
+    }
+
+    .parallax-text h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .parallax-text p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .two-column-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 80px 20px;
+      align-items: center;
+      background: linear-gradient(135deg, #2E8B57, #1A1A1A);
+      color: #FFF;
+    }
+
+    .two-column-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .two-column-section .text-content {
+      font-size: 1.8rem;
+      line-height: 1.8;
+    }
+
+    .catalog {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 80px;
+      padding: 20px;
+      background: linear-gradient(120deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.8));
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    .catalog-item {
+      display: grid;
+      grid-template-areas: 
+        "main side1"
+        "main side2"
+        "content content";
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto auto auto;
+      grid-gap: 10px;
+      background: #262626;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .catalog-item-content {
+      grid-area: content;
+      padding: 20px;
+      background: #1A1A1A;
+      color: #FFF;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .catalog-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .catalog-item img:nth-child(1) {
+      grid-area: main;
+    }
+
+    .catalog-item img:nth-child(2) {
+      grid-area: side1;
+      margin-top: 100px;
+    }
+
+    .catalog-item img:nth-child(3) {
+      grid-area: side2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(120deg, #1A1A1A, #2E8B57);
+      color: #FFF;
+      border-top: 2px solid #F4F43E;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .catalog {
+        grid-template-columns: 1fr;
+      }
+
+      .catalog-item {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "main"
+          "side1"
+          "side2"
+          "content";
+      }
+
+      .two-column-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .two-column-section img {
+        margin-bottom: 20px;
+      }
+
+      .catalog-item img:nth-child(2) { 
+        margin-top: 0;
+      }
+
+      .two-column-section .text-content {
+      font-size: 1.4rem;
+      line-height: 1.8;
+    }
+    }
+
+    .highlight-text {
+      background: linear-gradient(135deg, #E42D2D, #F4F43E, #2E8B57, #1A1A1A);
+  color: black;
+  padding: 8px 12px;
+  animation: gradient 15s ease infinite;
+  background-size: 200% 200%;
+  
+    }
+
+    @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+     /* Lightbox Styles */
+     .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #FFF;
+    cursor: pointer;
+  }
+
+  .audio-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2E8B57;
+      color: #FFF;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .audio-button:hover {
+      background-color: #3CB371;
+    }
+
+    .shop-btn {
+      background: linear-gradient(135deg, #E42D2D, #F4F43E, #2E8B57, #1A1A1A);
+  padding: 20px;
+  border-radius: 20px;
+  color: black;
+  font-weight: 700;
+  display: inline-block;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i><span style = "color: green">Bob Marley X GAS Collection</span></i></h1>
+  </header>
+
+  <section class="parallax-section">
+    <div class="parallax-text">
+      <h1>One Love One Heart</h1>
+      <p>Celebrate the legacy of an icon who changed the world with his music, message, and unmistakable style. Our Bob Marley collection pays homage to the legendary artist who stood for love, unity, and freedom.</p>
+      <p>Every piece in this collection is inspired by Marley's vibrant spirit, his timeless music, and his commitment to making the world a better place. From bold graphics of his iconic imagery to designs that reflect his Rastafarian roots, this collection is a tribute to his enduring influence.</p>
+      <p>Bob Marley wasn't just a musician—he was a movement. His words continue to inspire generations: "One love, one heart. Let's get together and feel all right."</p>
+      <p>Wear the spirit of Bob Marley and carry his message of peace, love, and unity with you every day. Explore the collection now and let the legend live on.</p>
+    </div>
+  </section>
+
+  <audio id="background-audio" src="sample.mp3" autoplay loop></audio>
+
+  <button class="audio-button" id="audio-toggle">&#9658;</button>
+
+  <section class="two-column-section">
+    <img src="./bob-2.jpg" alt="Bob Marley X GAS">
+    <div class="text-content">
+      <p>
+        Bob Marley, a global icon and pioneer of reggae music, embodied spirit of peace, love, and social justice. His timeless hits like "No Woman, No Cry" and "One Love" carry messages of unity and freedom and continue to resonate across generations. Marley's bold, rebellious energy aligns seamlessly with the GAS Jeans ethos, celebrating individuality and self-expression. The GAS x Bob Marley collection captures his enduring legacy, fusing his vibrant spirit with contemporary style.
+      </p>
+    </div>
+  </section>
+
+  <section class="two-column-section" style="grid-template-columns: 1fr;">
+    <div class="text-content" style="text-align: center;">
+      <h2>Bob Marley X GAS</h2>
+      <p>The collaboration between BOB MARLEY and GAS merges the iconic legacy of reggae music and the contemporary style of fashion. This unique collection brings Bob Marley's vibrant energy and cultural influence into a cutting-edge apparel line designed to appeal to both music fans and vintage enthusiasts alike. These casual yet statement-making pieces celebrate Marley’s music and ideals. Bold graphics display album artwork, reggae-inspired designs, and powerful phrases, while the vivid prints capture the essence of Marley's legacy.</p>
+
+        <a class="shop-btn" href="https://www.gasjeans.in/bob-marley">Shop Bob Marley X GAS Collection</a>
+
+    
+    </div>
+
+  </section>
+
+  <div class="container">
+    <section class="catalog">
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508593_0021_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508593_0021_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508593_0021_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Graphic Print Boxy Fit Round Neck Sweatshirt</h1>
+          <p><b>Fabric Composition:</b> 60% Cotton, 40% Polyester</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Beige</p>
+          <p><b>Price:</b> ₹6999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508597_0200_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508597_0200_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508597_0200_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Graphic Print Round Neck Regular Fit Sweatshirt</h1>
+          <p><b>Fabric Composition:</b> 60% Cotton 40% Polyester</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Black</p>
+          <p><b>Price:</b> ₹6999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508603_z037_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508603_z037_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508603_z037_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Graphic Print Round Neck Regular Fit Sweatshirt</h1>
+          <p><b>Fabric Composition:</b> 60% Cotton, 40% Polyester</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Grey Melange</p>
+          <p><b>Price:</b> ₹6999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508592_z839_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508592_z839_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508592_z839_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Graphic Print Boxy Fit Round Neck T-shirt</h1>
+          <p><b>Fabric Composition:</b> 60% Polyester 35% Cotton 5% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Beige</p>
+          <p><b>Price:</b> ₹4599</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508594_z839_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508594_z839_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508594_z839_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>All Over Printed Boxy Fit Round Neck T-shirt</h1>
+          <p><b>Fabric Composition:</b> 51% Polyester 43% Cotton 6% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Beige</p>
+          <p><b>Price:</b> ₹4999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508595_0200_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508595_0200_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508595_0200_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Boxy Fit Round Neck Printed T-shirt</h1>
+          <p><b>Fabric Composition:</b> 60% Polyester 35% Cotton 5% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Black</p>
+          <p><b>Price:</b> ₹4999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508596_1464_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508596_1464_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508596_1464_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Retro Graphic Print Boxy Fit Round Neck T-shirt</h1>
+          <p><b>Fabric Composition:</b> 60% Polyester 35% Cotton 5% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Khaki</p>
+          <p><b>Price:</b> ₹4599</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508596_0200_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508596_0200_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508596_0200_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Retro Graphic Print Boxy Fit Round Neck T-shirt</h1>
+          <p><b>Fabric Composition:</b> 60% Polyester 35% Cotton 5% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Black</p>
+          <p><b>Price:</b> ₹4599</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508599_2979_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508599_2979_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508599_2979_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Retro Graphic Print Boxy Fit Round Neck T-shirt</h1>
+          <p><b>Fabric Composition:</b> 72% Polyester 27% Cotton 1% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Grey</p>
+          <p><b>Price:</b> ₹4999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508600_z037_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508600_z037_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508600_z037_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Monochromatic Graphic Print Round Neck T-shirt</h1>
+          <p><b>Fabric Composition:</b> 60% Cotton, 40% Polyester</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Grey Melange</p>
+          <p><b>Price:</b> ₹6999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508601_z037_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508601_z037_MODEL5.png" alt="Side Image 1">
+        <div class="catalog-item-content">
+          <h1>Graphic Print Round Neck Regular Fit T-shirt</h1>
+          <p><b>Fabric Composition:</b> 59% Rayon 34% Nylon 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Cloud Dancer</p>
+          <p><b>Price:</b> ₹4599</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508602_z037_MODEL.png" alt="Main Image">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508602_z037_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.pixelbin.io/v2/black-bread-289bfa/iix9pB/wrkr/t.resize(h:650,w:488)/data/gas/19dec2024/410508602_z037_MODEL6.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Monochromatic Graphic Round Neck Regular Fit T-shirt</h1>
+          <p><b>Fabric Composition:</b> 59% Rayon 34% Nylon 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Grey Melange</p>
+          <p><b>Price:</b> ₹4599</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const lightbox = document.createElement('div');
+      lightbox.classList.add('lightbox');
+      lightbox.innerHTML = '<span class="lightbox-close">&times;</span><img>';
+      document.body.appendChild(lightbox);
+  
+      const lightboxImage = lightbox.querySelector('img');
+      const lightboxClose = lightbox.querySelector('.lightbox-close');
+  
+      document.querySelectorAll('.catalog-item img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImage.src = img.src;
+          lightbox.classList.add('active');
+        });
+      });
+  
+      lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+      });
+  
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+        }
+      });
+    });
+
+    const audio = document.getElementById('background-audio');
+      const audioToggle = document.getElementById('audio-toggle');
+
+      // Initially playing, set button to pause icon
+      audioToggle.innerHTML = '&#10074;&#10074;';
+
+      audioToggle.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          audioToggle.innerHTML = '&#10074;&#10074;'; // Pause icon
+        } else {
+          audio.pause();
+          audioToggle.innerHTML = '&#9658;'; // Play icon
+        }
+      });
+  </script>
+  
+  <footer>
+    <p>&copy; 2024 Bob Marley X GAS Collection. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
