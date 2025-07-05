@@ -46,10 +46,19 @@
 
     header h1 {
       font-size: 4rem;
-      font-weight: bold;
-      margin: 0;
-      position: relative;
-      z-index: 2;
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+    }
+
+    .sm-logo {
+      max-width: 400px;
     }
 
     .sm-img {
@@ -57,6 +66,7 @@
       max-height: 800px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      max-width: 100%;
     }
 
     .parallax-section {
@@ -87,11 +97,19 @@
       color: #FFF;
       max-width: 1000px;
       padding: 20px;
+     
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
     }
 
     .parallax-text h1 {
       font-size: 5rem;
       margin-bottom: 20px;
+
+      @media (max-width: 768px) {
+        font-size: 3rem;
+      }
     }
 
     .parallax-text p {
@@ -358,7 +376,7 @@
 </head>
 <body>
   <header>
-    <h1><i><span style = "color: red">SUPERMAN X GAS Collection</span></i></h1>
+    <h1><img src="./LOGO.jpg" alt="Superman X GAS" class="sm-logo"><i><span style = "color: red">SUPERMAN X GAS Collection</span></i></h1>
   </header>
 
   <section class="parallax-section">
@@ -367,7 +385,7 @@
       <p>
         GAS proudly launches an exclusive capsule in collaboration with Superman, celebrating the long-awaited return of the legendary Superhero with the highly anticipated theatrical release on July 11, 2025 — a full decade in the making. 
       </p>
-      <img src="./sm.jpg" alt="Superman X GAS" class="sm-img">
+      <img src="./sm.jpeg" alt="Superman X GAS" class="sm-img">
     </div>
   </section>
 
