@@ -59,7 +59,14 @@
 
     .sm-logo {
       max-width: 400px;
-    }
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+  }
+}
 
     .sm-img {
       width: auto;
@@ -375,9 +382,10 @@
   </style>
 </head>
 <body>
-  <header>
+  <img src="./LOGO.jpg" alt="Superman X GAS" class="sm-logo">
+  <!-- <header>
     <h1><img src="./LOGO.jpg" alt="Superman X GAS" class="sm-logo"><i><span style = "color: red">SUPERMAN X GAS Collection</span></i></h1>
-  </header>
+  </header> -->
 
   <section class="parallax-section">
     <div class="parallax-text">
