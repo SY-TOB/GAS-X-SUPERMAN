@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAS X Superman Collection</title>
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0D47A1, #1565C0, #1976D2, #1E88E5);
+      color: #FFF;
+      line-height: 1.6;
+      overflow-x: hidden;
+      perspective: 1000px;
+    }
+
+     /* Custom Scrollbar */
+     ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, #FFD700, #FF6B35);
+      border-radius: 6px;
+    }
+
+     /* Animated Background */
+     .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(220, 20, 60, 0.1) 0%, transparent 50%);
+      animation: bgFloat 20s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes bgFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-20px) rotate(1deg); }
+      66% { transform: translateY(10px) rotate(-1deg); }
+    }
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(13, 71, 161, 0.9), rgba(21, 101, 192, 0.9));
+      backdrop-filter: blur(10px);
+      text-align: center;
+      padding: 40px 0;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: headerFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes headerFloat {
+      0%, 100% { transform: translateZ(0px) rotateX(0deg); }
+      50% { transform: translateZ(10px) rotateX(2deg); }
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23FFD700" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23FF6B35" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23DC143C" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: 4.5rem;
+      font-weight: 900;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(45deg, #FFD700, #FF6B35, #DC143C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      0% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5)); }
+      100% { filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.8)); }
+    }
+
+    .parallax-section {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      background: 
+        linear-gradient(rgba(13, 71, 161, 0.7), rgba(21, 101, 192, 0.7)),
+        url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    .parallax-section::before {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #FFF;
+      max-width: 1200px;
+      padding: 40px;
+      transform-style: preserve-3d;
+    }
+
+    .parallax-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #FFF;
+      max-width: 1200px;
+      padding: 40px;
+      transform-style: preserve-3d;
+    }
+
+    .parallax-text h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: 5rem;
+      margin-bottom: 30px;
+      transform: translateZ(50px);
+      animation: heroFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes heroFloat {
+      0%, 100% { transform: translateZ(50px) translateY(0px); }
+      50% { transform: translateZ(50px) translateY(-20px); }
+    }
+
+    .parallax-text p {
+      font-size: 1.4rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      transform: translateZ(30px);
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    .parallax-text p:nth-child(2) { animation-delay: 1s; }
+    .parallax-text p:nth-child(3) { animation-delay: 1.5s; }
+    .parallax-text p:nth-child(4) { animation-delay: 2s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateZ(30px) translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateZ(30px) translateY(0px);
+      }
+    }
+
+    /* Comic Panels */
+    .comic-panels {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 50px;
+    }
+
+    .comic-panel {
+      width: 200px;
+      height: 300px;
+      border: 4px solid #FFD700;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transform: rotateY(15deg);
+      transition: all 0.5s ease;
+      animation: comicFloat 8s ease-in-out infinite;
+    }
+
+    .comic-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.2) saturate(1.3);
+    }
+
+    .panel-1 {
+      animation-delay: 0s;
+      transform: rotateY(15deg) translateY(-20px);
+    }
+
+    .panel-2 {
+      animation-delay: 2s;
+      transform: rotateY(-15deg) translateY(20px);
+    }
+
+    .panel-3 {
+      animation-delay: 4s;
+      transform: rotateY(15deg) translateY(-10px);
+    }
+
+    @keyframes comicFloat {
+      0%, 100% { transform: rotateY(15deg) translateY(0px); }
+      50% { transform: rotateY(15deg) translateY(-30px); }
+    }
+
+    .comic-panel:hover {
+      transform: rotateY(0deg) scale(1.1);
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    /* Floating Elements */
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .floating-element {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #FFD700, #FF6B35);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 15s ease-in-out infinite;
+    }
+
+    .floating-element:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .floating-element:nth-child(2) {
+      top: 60%;
+      right: 15%;
+      animation-delay: 3s;
+    }
+
+    .floating-element:nth-child(3) {
+      bottom: 30%;
+      left: 20%;
+      animation-delay: 6s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-30px) rotate(120deg); }
+      66% { transform: translateY(20px) rotate(240deg); }
+    }
+
+    /* Two Column Section */
+    .two-column-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 80px 20px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(13, 71, 161, 0.9), rgba(21, 101, 192, 0.9));
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .two-column-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23FFD700" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      z-index: 1;
+    }
+
+    .two-column-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .two-column-section img:hover {
+      transform: scale(1.05) rotateY(5deg);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .two-column-section .text-content {
+      font-size: 1.8rem;
+      line-height: 1.8;
+      position: relative;
+      z-index: 2;
+    }
+
+     /* Catalog Section */
+     .catalog {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 60px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(13, 71, 161, 0.8));
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      position: relative;
+      margin: 40px 0;
+    }
+
+    .catalog::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+      border-radius: 20px;
+      z-index: 1;
+    }
+
+    .catalog-item {
+      display: grid;
+      grid-template-areas: 
+        "main side1"
+        "main side2"
+        "content content";
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto auto auto;
+      grid-gap: 15px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      transition: all 0.5s ease;
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .catalog-item:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 215, 0, 0.3);
+    }
+
+    .catalog-item-content {
+      grid-area: content;
+      padding: 25px;
+      background: linear-gradient(135deg, rgba(13, 71, 161, 0.9), rgba(21, 101, 192, 0.9));
+      color: #FFF;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .catalog-item-content h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #FFD700;
+    }
+
+    .comic-badge {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: linear-gradient(45deg, #FFD700, #FF6B35);
+      color: #000;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-family: 'Orbitron', monospace;
+      font-weight: bold;
+      font-size: 0.8rem;
+      transform: rotate(5deg);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      animation: badgeGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes badgeGlow {
+      0% { box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
+      100% { box-shadow: 0 4px 25px rgba(255, 215, 0, 0.6); }
+    }
+
+    .catalog-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .catalog-item img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .catalog-item img:nth-child(1) {
+      grid-area: main;
+    }
+
+    .catalog-item img:nth-child(2) {
+      grid-area: side1;
+      margin-top: 100px;
+    }
+
+    .catalog-item img:nth-child(3) {
+      grid-area: side2;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, rgba(13, 71, 161, 0.9), rgba(21, 101, 192, 0.9));
+      color: #FFF;
+      border-top: 3px solid #FFD700;
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(10px);
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="%23FFD700" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+      opacity: 0.5;
+      z-index: 1;
+    }
+
+    footer p {
+      position: relative;
+      z-index: 2;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .catalog {
+        grid-template-columns: 1fr;
+      }
+
+      .catalog-item {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "main"
+          "side1"
+          "side2"
+          "content";
+      }
+
+      .two-column-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .two-column-section img {
+        margin-bottom: 20px;
+      }
+
+      .catalog-item img:nth-child(2) { 
+        margin-top: 0;
+      }
+
+      .two-column-section .text-content {
+      font-size: 1.4rem;
+      line-height: 1.8;
+    }
+    }
+
+    .highlight-text {
+      background: linear-gradient(135deg, #E42D2D, #F4F43E, #2E8B57, #1A1A1A);
+  color: black;
+  padding: 8px 12px;
+  animation: gradient 15s ease infinite;
+  background-size: 200% 200%;
+  
+    }
+
+    @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+     /* Lightbox Styles */
+     .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #FFF;
+    cursor: pointer;
+  }
+
+  .audio-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2E8B57;
+      color: #FFF;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .audio-button:hover {
+      background-color: #3CB371;
+    }
+
+    .shop-btn {
+      background: linear-gradient(45deg, #FFD700, #FF6B35, #DC143C);
+  padding: 20px;
+  border-radius: 20px;
+  color: black;
+  font-weight: 700;
+  display: inline-block;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GAS X SUPERMAN Collection</h1>
+  </header>
+
+  <section class="parallax-section">
+    <div class="floating-elements">
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+    </div>
+    <div class="comic-panels">
+      <div class="comic-panel panel-1">
+        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Superman Comic Panel 1">
+      </div>
+      <div class="comic-panel panel-2">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Superman Comic Panel 2">
+      </div>
+      <div class="comic-panel panel-3">
+        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Superman Comic Panel 3">
+      </div>
+    </div>
+    <div class="parallax-text">
+      <h1>LOOK UP, IN THE SKY</h1>
+      <p>GAS proudly launches an exclusive capsule in collaboration with Superman, celebrating the long-awaited return of the legendary hero with the highly anticipated film release on July 11, 2025 — a full decade in the making</p>
+      <p>This big screen reboot directed by James Gunn introduces a more grounded, emotionally layered Clark Kent — a hero caught between two worlds, fighting to find his place while continuing to stand as a symbol of hope</p>
+      <p>With a mix of high-stakes action and deeper storytelling, the film redefines what it means to be Superman for today's world.</p>
+    </div>
+  </section>
+
+  <audio id="background-audio" src="superman-music.mp3" autoplay loop></audio>
+
+  <button class="audio-button" id="audio-toggle">&#9658;</button>
+
+  <section class="two-column-section">
+    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Superman X GAS">
+    <div class="text-content">
+      <p>
+        Superman, the Man of Steel, is one of the most iconic superheroes ever created. 
+        Born Kal-El on the planet Krypton, he was sent to Earth as a baby and raised as Clark Kent. 
+        With his incredible powers and unwavering moral compass, Superman has been a symbol of hope and justice for generations.
+        His famous motto "Truth, Justice, and the American Way" has inspired millions worldwide.
+      </p>
+    </div>
+  </section>
+
+  <section class="two-column-section" style="grid-template-columns: 1fr;">
+    <div class="text-content" style="text-align: center;">
+      <h2>GAS X SUPERMAN</h2>
+      <p>The GAS X SUPERMAN capsule takes a darker, elevated approach with sleek black and white base tones, offering a refined, evening wear edge that speaks to both fashion-conscious customers and comic book lovers. Grounding neutrals form the perfect canvas for striking pops of Superman’s signature red and blue, bold metallic prints echo the strength and brilliance of Superman’s iconic armour, keeping the heart of the hero alive in every piece. Iconic DC comic artworks reimagined through a contemporary lens—offbeat placements, merging graphic nostalgia with street-ready sophistication. Designed for those who grew up idolizing the Man of Steel, as well as a new generation of comic book lovers discovering his legacy, this collection bridges timeless heroism with modern-day style.</p>
+        <a class="shop-btn" href="https://gasjeans.in/collection/superman">Shop GAS X SUPERMAN Collection</a>
+    </div>
+
+  </section>
+
+  <div class="container">
+    <section class="catalog">
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/MmC7hkdpc-410539613_4911_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/aaINPEBA0k-410539613_4911_MODEL4.jpg" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/EEc919xUhs-410539613_4911_MODEL7.jpg" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Regular Fit Metropolis Graphic Polo</h1>
+          <p><b>Material:</b> 63% Cotton 30% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Jet Black</p>
+          <p><b>Sleeve:</b> Short Sleeves</p>
+          <p><b>Collar:</b> Classic Collar</p>
+          <p><b>Price:</b> ₹3999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/GyCfoF5uyK-410539614_0001_MODEL.jpg" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/nPfQJt6h1s-410539614_0001_MODEL4.jpg" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/HRPv4MP2im-410539614_0001_MODEL7.jpg" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Regular Fit Shield Graphic Polo</h1>
+          <p><b>Material:</b> 63% Cotton 30% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> White</p>
+          <p><b>Sleeve:</b> Short Sleeves</p>
+          <p><b>Collar:</b> Classic Collar</p>
+          <p><b>Price:</b> ₹3999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/6fWkPKaUsW-410539615_0001_MODEL.jpg" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/aVOA0HX6map-410539615_0001_MODEL4.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/vK0Oex3Npu5-410539615_0001_MODEL7.jpg" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Regular Fit Back Hit Shirt</h1>
+          <p><b>Material:</b> 63% Cotton 30% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> White</p>
+          <p><b>Sleeve:</b> Short Sleeves</p>
+          <p><b>Collar:</b> Classic Collar</p>
+          <p><b>Price:</b> ₹4999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/C7siKBHzjKD-410539616_4911_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/m1vo1cxoW6i-410539616_4911_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/yJaGlBRcjQN-410539616_4911_MODEL8.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Regular Fit Shield Graphic Shirt</h1>
+          <p><b>Material:</b> 63% Cotton 30% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Jet Black</p>
+          <p><b>Sleeve:</b> Short Sleeves</p>
+          <p><b>Collar:</b> Classic Collar</p>
+          <p><b>Price:</b> ₹4999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539617006/CmH2Cz4lUGf-410539617_4911_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539617006/4OYrL6-4QqN-410539617_4911_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539617006/UIkBQd-yZQP-410539617_4911_MODEL7.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Regular Fit All Over Flock Sweatshirt</h1>
+          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Jet Black</p>
+          <p><b>Sleeve:</b> Long Sleeves</p>
+          <p><b>Neck Type:</b> Round Neck</p>
+          <p><b>Price:</b> ₹7999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539618006/30cWtiQ3Kzu-410539618_4911_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539618006/5gfffzajlb2-410539618_4911_MODEL4.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539618006/kXsVeZzri8Y-410539618_4911_MODEL7.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Back Hit Boxy Fit Sweatshirt With Hood</h1>
+          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Jet Black</p>
+          <p><b>Sleeve:</b> Long Sleeves</p>
+          <p><b>Neck Type:</b> Round with Hood</p>
+          <p><b>Price:</b> ₹7999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539619006/hg2gVIULDDk-410539619_4911_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539619006/0rPqjnl5kCp-410539619_4911_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539619006/v-b1WEHJ2Uh-410539619_4911_MODEL7.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Metropolis Regular Fit Trackpant</h1>
+          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Jet Black</p>
+          <p><b>Price:</b> ₹6999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539620007/hs6dOnOYN6U-410539620_4911_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539620007/zmt3bgRnSqQ-410539620_4911_MODEL5.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539620007/qA3-BAHJy1Y-410539620_4911_MODEL7.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Regular Fit Shield Graphic Tee</h1>
+          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Jet Black</p>
+          <p><b>Sleeve:</b> Short Sleeves</p>
+          <p><b>Neck Type:</b> Crew Neck</p>
+          <p><b>Price:</b> ₹3999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539621006/baBB0MXGR9P-410539621_4911_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539621006/-quIEls3Cgc-410539621_4911_MODEL4.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539621006/yGB9zvUVnB1-410539621_4911_MODEL8.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Regular Fit Krypton Graphic Tee</h1>
+          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Regular Fit</p>
+          <p><b>Color:</b> Jet Black</p>
+          <p><b>Sleeve:</b> Short Sleeves</p>
+          <p><b>Neck Type:</b> Crew Neck</p>
+          <p><b>Price:</b> ₹3599</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539622006/mBK227zsSEV-410539622_4911_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539622006/CbfiPp036T7-410539622_4911_MODEL7.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539622006/7TyQVpnJlyt-410539622_4911_MODEL8.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Comic Graphic Boxy Fit Tee</h1>
+          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Jet Black</p>
+          <p><b>Sleeve:</b> Short Sleeves</p>
+          <p><b>Neck Type:</b> Crew Neck</p>
+          <p><b>Price:</b> ₹3999</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623012/bgJJHV6VyOw-410539623_0001_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623012/NJ6fxxRUyGH-410539623_0001_MODEL4.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623012/wn_Q4Q0js3--410539623_0001_MODEL7.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Metropolis Graphic Boxy Fit Tee</h1>
+          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> White</p>
+          <p><b>Sleeve:</b> Short Sleeves</p>
+          <p><b>Neck Type:</b> Crew Neck</p>
+          <p><b>Price:</b> ₹3599</p>
+        </div>
+      </div>
+
+      <div class="catalog-item">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623006/OfierESE_SR-410539623_4911_MODEL.png" alt="Main Image">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623006/qLiFjqdelrE-410539623_4911_MODEL4.png" alt="Side Image 1">
+        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623006/Edx3jVzuBBd-410539623_4911_MODEL7.png" alt="Side Image 2">
+        <div class="catalog-item-content">
+          <h1>Superman Metropolis Graphic Boxy Fit Tee</h1>
+          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
+          <p><b>Fit:</b> Boxy Fit</p>
+          <p><b>Color:</b> Jet Black</p>
+          <p><b>Sleeve:</b> Short Sleeves</p>
+          <p><b>Neck Type:</b> Crew Neck</p>
+          <p><b>Price:</b> ₹3599</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const lightbox = document.createElement('div');
+      lightbox.classList.add('lightbox');
+      lightbox.innerHTML = '<span class="lightbox-close">&times;</span><img>';
+      document.body.appendChild(lightbox);
+  
+      const lightboxImage = lightbox.querySelector('img');
+      const lightboxClose = lightbox.querySelector('.lightbox-close');
+  
+      document.querySelectorAll('.catalog-item img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImage.src = img.src;
+          lightbox.classList.add('active');
+        });
+      });
+  
+      lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+      });
+  
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+        }
+      });
+    });
+
+    const audio = document.getElementById('background-audio');
+      const audioToggle = document.getElementById('audio-toggle');
+
+      // Initially playing, set button to pause icon
+      audioToggle.innerHTML = '&#10074;&#10074;';
+
+      audioToggle.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          audioToggle.innerHTML = '&#10074;&#10074;'; // Pause icon
+        } else {
+          audio.pause();
+          audioToggle.innerHTML = '&#9658;'; // Play icon
+        }
+      });
+  </script>
+  
+  <footer>
+    <p>&copy; 2025 SUPERMAN X GAS Collection. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
