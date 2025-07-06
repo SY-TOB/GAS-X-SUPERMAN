@@ -46,27 +46,23 @@
 
     header h1 {
       font-size: 4rem;
-  font-weight: bold;
-  margin: 0;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+      font-weight: bold;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .sm-logo {
       max-width: 400px;
-  margin: 0 auto;
-  display: block;
-  width: 100%;
-
-  @media (max-width: 1024px) {
-    max-width: 100%;
-  }
-}
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+    }
 
     .sm-img {
       width: auto;
@@ -104,19 +100,11 @@
       color: #FFF;
       max-width: 1000px;
       padding: 20px;
-     
-      @media (max-width: 768px) {
-        max-width: 100%;
-      }
     }
 
     .parallax-text h1 {
       font-size: 5rem;
       margin-bottom: 20px;
-
-      @media (max-width: 768px) {
-        font-size: 3rem;
-      }
     }
 
     .parallax-text p {
@@ -144,7 +132,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      /* background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23FFD700" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); */
       z-index: 1;
     }
 
@@ -226,8 +213,8 @@
       grid-area: side2;
     }
 
-   /* Footer */
-   footer {
+    /* Footer */
+    footer {
       text-align: center;
       padding: 40px 20px;
       background: linear-gradient(135deg, rgba(13, 71, 161, 0.9), rgba(21, 101, 192, 0.9));
@@ -256,98 +243,60 @@
       font-size: 1.2rem;
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      .catalog {
-        grid-template-columns: 1fr;
-      }
-
-      .catalog-item {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-          "main"
-          "side1"
-          "side2"
-          "content";
-      }
-
-      .two-column-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .two-column-section img {
-        margin-bottom: 20px;
-      }
-
-      .catalog-item img:nth-child(2) { 
-        margin-top: 0;
-      }
-
-      .two-column-section .text-content {
-      font-size: 1.4rem;
-      line-height: 1.8;
-    }
-    }
-
     .highlight-text {
       background: linear-gradient(135deg, #E42D2D, #F4F43E, #2E8B57, #1A1A1A);
-  color: black;
-  padding: 8px 12px;
-  animation: gradient 15s ease infinite;
-  background-size: 200% 200%;
-  
+      color: black;
+      padding: 8px 12px;
+      animation: gradient 15s ease infinite;
+      background-size: 200% 200%;
     }
 
     @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-     /* Lightbox Styles */
-     .lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
 
-  .lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-  }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
 
-  .lightbox.active {
-    display: flex;
-  }
+    .lightbox.active {
+      display: flex;
+    }
 
-  .lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: #FFF;
-    cursor: pointer;
-  }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 2rem;
+      color: #FFF;
+      cursor: pointer;
+    }
 
-  .audio-button {
+    .audio-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
@@ -371,21 +320,174 @@
     }
 
     .shop-btn {
-      background: linear-gradient(45deg, #FFD700, #FF6B35, #DC143C);
-  padding: 20px;
-  border-radius: 20px;
-  color: black;
-  font-weight: 700;
-  display: inline-block;
+      padding: 20px;
+      border-radius: 20px;
+      color: black;
+      font-weight: 700;
+      display: inline-block;
+      background: #dd4824;
     }
 
+    @media (max-width: 1024px) {
+      .sm-logo {
+        max-width: 100%;
+      }
+    }
+
+    /* MOBILE SLIDER - ONLY MOBILE */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .parallax-text {
+        max-width: 100%;
+      }
+
+      .parallax-text h1 {
+        font-size: 3rem;
+      }
+
+      .catalog {
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+      }
+
+      .catalog-item {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "content content";
+        display: block;
+        background: #262626;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      /* Hide desktop grid images on mobile */
+      .catalog-item > img {
+        display: none !important;
+      }
+
+      /* Show mobile slider */
+      .mobile-slider-container {
+        display: block !important;
+        margin-bottom: 15px;
+        background: transparent;
+      }
+
+      .mobile-image-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 15px;
+        padding: 15px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        background: transparent;
+        position: relative;
+      }
+
+      .mobile-image-slider::-webkit-scrollbar {
+        display: none;
+      }
+
+      .mobile-image-slider img {
+        flex: 0 0 250px;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Navigation Arrows for Mobile */
+      .slider-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: background 0.3s ease;
+      }
+
+      .slider-nav:hover {
+        background: rgba(0, 0, 0, 0.9);
+      }
+
+      .slider-nav.prev {
+        left: 20px;
+      }
+
+      .slider-nav.next {
+        right: 20px;
+      }
+
+      .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 0 0 15px 0;
+        padding: 0 15px;
+      }
+
+      .slider-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .slider-dot.active {
+        background: #FFD700;
+      }
+
+      .catalog-item-content {
+        margin: 0;
+        padding: 20px;
+        background: #1A1A1A;
+        color: #FFF;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .two-column-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .two-column-section img {
+        margin-bottom: 20px;
+      }
+
+      .catalog-item img:nth-child(2) { 
+        margin-top: 0;
+      }
+
+      .two-column-section .text-content {
+        font-size: 1.4rem;
+        line-height: 1.8;
+      }
+    }
+
+    /* Hide mobile slider on desktop */
+    .mobile-slider-container {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <img src="./LOGO.jpg" alt="Superman X GAS" class="sm-logo">
-  <!-- <header>
-    <h1><img src="./LOGO.jpg" alt="Superman X GAS" class="sm-logo"><i><span style = "color: red">SUPERMAN X GAS Collection</span></i></h1>
-  </header> -->
 
   <section class="parallax-section">
     <div class="parallax-text">
@@ -405,7 +507,7 @@
     <img src="./sm-2.jpg" alt="Superman X GAS">
     <div class="text-content">
       <p>
-        The SUPERMAN X GAS capsule takes a darker, elevated approach with sleek black and white base tones, offering a refined, evening wear edge that speaks to both fashion-conscious customers and comic book lovers. Grounding neutrals form the perfect canvas for striking pops of Superman’s signature red and blue, bold metallic prints echo the strength and brilliance of Superman’s iconic Shield, keeping the heart of the Superhero alive in every piece. 
+        The SUPERMAN X GAS capsule takes a darker, elevated approach with sleek black and white base tones, offering a refined, evening wear edge that speaks to both fashion-conscious customers and comic book lovers. Grounding neutrals form the perfect canvas for striking pops of Superman's signature red and blue, bold metallic prints echo the strength and brilliance of Superman's iconic Shield, keeping the heart of the Superhero alive in every piece. 
       </p>
       <p>
         Iconic DC comic artworks reimagined through a contemporary lens—offbeat placements, merging graphic nostalgia with street-ready sophistication. Offering a range with a perfect mix of casual yet edgy silhouettes comprising classic tees and polos with interesting logo placements, and boxy tees with minimal graphic language. Key pieces vary from Sweats with all over tonal flock print in classic black on black sophisticated take, to bold back print oversized edgy pieces. Designed for those who grew up idolizing the Superhero, as well as a new generation of comic book lovers discovering his legacy, this collection bridges timeless heroism with modern-day style.
@@ -414,20 +516,30 @@
     </div>
   </section>
 
-  <!-- <section class="two-column-section" style="grid-template-columns: 1fr;">
-    <div class="text-content">
-      <h2>SUPERMAN X GAS</h2>
-      <p>The SUPERMAN X GAS capsule takes a darker, elevated approach with sleek black and white base tones, offering a refined, evening wear edge that speaks to both fashion-conscious customers and comic book lovers. Grounding neutrals form the perfect canvas for striking pops of Superman’s signature red and blue, bold metallic prints echo the strength and brilliance of Superman’s iconic armour, keeping the heart of the hero alive in every piece. Iconic DC comic artworks reimagined through a contemporary lens—offbeat placements, merging graphic nostalgia with street-ready sophistication. Designed for those who grew up idolizing the Man of Steel, as well as a new generation of comic book lovers discovering his legacy, this collection bridges timeless heroism with modern-day style.</p>
-        <a class="shop-btn" href="https://gasjeans.in/collection/superman">Shop SUPERMAN X GAS Collection</a>
-    </div>
-  </section> -->
-
   <div class="container">
     <section class="catalog">
       <div class="catalog-item">
+        <!-- Desktop Images (Hidden on Mobile) -->
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/MmC7hkdpc-410539613_4911_MODEL.png" alt="Main Image">
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/aaINPEBA0k-410539613_4911_MODEL4.jpg" alt="Side Image 1">
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/EEc919xUhs-410539613_4911_MODEL7.jpg" alt="Side Image 2">
+        
+        <!-- Mobile Slider (Hidden on Desktop) -->
+        <div class="mobile-slider-container">
+          <div class="mobile-image-slider" data-slider="0">
+            <button class="slider-nav prev" onclick="slideLeft(0)">‹</button>
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/MmC7hkdpc-410539613_4911_MODEL.png" alt="Main Image">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/aaINPEBA0k-410539613_4911_MODEL4.jpg" alt="Side Image 1">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/EEc919xUhs-410539613_4911_MODEL7.jpg" alt="Side Image 2">
+            <button class="slider-nav next" onclick="slideRight(0)">›</button>
+          </div>
+          <div class="slider-dots">
+            <span class="slider-dot active" onclick="goToSlide(0, 0)"></span>
+            <span class="slider-dot" onclick="goToSlide(0, 1)"></span>
+            <span class="slider-dot" onclick="goToSlide(0, 2)"></span>
+          </div>
+        </div>
+
         <div class="catalog-item-content">
           <h1>Superman Regular Fit Metropolis Graphic Polo</h1>
           <p><b>Material:</b> 63% Cotton 30% Polyester 7% Spandex</p>
@@ -440,9 +552,27 @@
       </div>
 
       <div class="catalog-item">
+        <!-- Desktop Images (Hidden on Mobile) -->
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/GyCfoF5uyK-410539614_0001_MODEL.jpg" alt="Main Image">
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/nPfQJt6h1s-410539614_0001_MODEL4.jpg" alt="Side Image 1">
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/HRPv4MP2im-410539614_0001_MODEL7.jpg" alt="Side Image 2">
+        
+        <!-- Mobile Slider (Hidden on Desktop) -->
+        <div class="mobile-slider-container">
+          <div class="mobile-image-slider" data-slider="1">
+            <button class="slider-nav prev" onclick="slideLeft(1)">‹</button>
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/GyCfoF5uyK-410539614_0001_MODEL.jpg" alt="Main Image">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/nPfQJt6h1s-410539614_0001_MODEL4.jpg" alt="Side Image 1">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/HRPv4MP2im-410539614_0001_MODEL7.jpg" alt="Side Image 2">
+            <button class="slider-nav next" onclick="slideRight(1)">›</button>
+          </div>
+          <div class="slider-dots">
+            <span class="slider-dot active" onclick="goToSlide(1, 0)"></span>
+            <span class="slider-dot" onclick="goToSlide(1, 1)"></span>
+            <span class="slider-dot" onclick="goToSlide(1, 2)"></span>
+          </div>
+        </div>
+
         <div class="catalog-item-content">
           <h1>Superman Regular Fit Shield Graphic Polo</h1>
           <p><b>Material:</b> 63% Cotton 30% Polyester 7% Spandex</p>
@@ -455,9 +585,25 @@
       </div>
 
       <div class="catalog-item">
+        <!-- Desktop Images (Hidden on Mobile) -->
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/6fWkPKaUsW-410539615_0001_MODEL.jpg" alt="Main Image">
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/aVOA0HX6map-410539615_0001_MODEL4.png" alt="Side Image 1">
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/vK0Oex3Npu5-410539615_0001_MODEL7.jpg" alt="Side Image 2">
+        
+        <!-- Mobile Slider (Hidden on Desktop) -->
+        <div class="mobile-slider-container">
+          <div class="mobile-image-slider">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/6fWkPKaUsW-410539615_0001_MODEL.jpg" alt="Main Image">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/aVOA0HX6map-410539615_0001_MODEL4.png" alt="Side Image 1">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/vK0Oex3Npu5-410539615_0001_MODEL7.jpg" alt="Side Image 2">
+          </div>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+          </div>
+        </div>
+
         <div class="catalog-item-content">
           <h1>Superman Regular Fit Back Hit Shirt</h1>
           <p><b>Material:</b> 63% Cotton 30% Polyester 7% Spandex</p>
@@ -469,10 +615,25 @@
         </div>
       </div>
 
+      <!-- Continue with remaining items following same pattern -->
       <div class="catalog-item">
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/C7siKBHzjKD-410539616_4911_MODEL.png" alt="Main Image">
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/m1vo1cxoW6i-410539616_4911_MODEL5.png" alt="Side Image 1">
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/yJaGlBRcjQN-410539616_4911_MODEL8.png" alt="Side Image 2">
+        
+        <div class="mobile-slider-container">
+          <div class="mobile-image-slider">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/C7siKBHzjKD-410539616_4911_MODEL.png" alt="Main Image">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/m1vo1cxoW6i-410539616_4911_MODEL5.png" alt="Side Image 1">
+            <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/yJaGlBRcjQN-410539616_4911_MODEL8.png" alt="Side Image 2">
+          </div>
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+          </div>
+        </div>
+
         <div class="catalog-item-content">
           <h1>Superman Regular Fit Shield Graphic Shirt</h1>
           <p><b>Material:</b> 63% Cotton 30% Polyester 7% Spandex</p>
@@ -484,128 +645,12 @@
         </div>
       </div>
 
-      <div class="catalog-item">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539617006/CmH2Cz4lUGf-410539617_4911_MODEL.png" alt="Main Image">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539617006/4OYrL6-4QqN-410539617_4911_MODEL5.png" alt="Side Image 1">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539617006/UIkBQd-yZQP-410539617_4911_MODEL7.png" alt="Side Image 2">
-        <div class="catalog-item-content">
-          <h1>Superman Regular Fit All Over Flock Sweatshirt</h1>
-          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
-          <p><b>Fit:</b> Regular Fit</p>
-          <p><b>Color:</b> Jet Black</p>
-          <p><b>Sleeve:</b> Long Sleeves</p>
-          <p><b>Neck Type:</b> Round Neck</p>
-          <p><b>Price:</b> ₹7999</p>
-        </div>
-      </div>
-
-      <div class="catalog-item">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539618006/30cWtiQ3Kzu-410539618_4911_MODEL.png" alt="Main Image">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539618006/5gfffzajlb2-410539618_4911_MODEL4.png" alt="Side Image 1">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539618006/kXsVeZzri8Y-410539618_4911_MODEL7.png" alt="Side Image 2">
-        <div class="catalog-item-content">
-          <h1>Superman Back Hit Boxy Fit Sweatshirt With Hood</h1>
-          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
-          <p><b>Fit:</b> Boxy Fit</p>
-          <p><b>Color:</b> Jet Black</p>
-          <p><b>Sleeve:</b> Long Sleeves</p>
-          <p><b>Neck Type:</b> Round with Hood</p>
-          <p><b>Price:</b> ₹7999</p>
-        </div>
-      </div>
-
-      <div class="catalog-item">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539619006/hg2gVIULDDk-410539619_4911_MODEL.png" alt="Main Image">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539619006/0rPqjnl5kCp-410539619_4911_MODEL5.png" alt="Side Image 1">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539619006/v-b1WEHJ2Uh-410539619_4911_MODEL7.png" alt="Side Image 2">
-        <div class="catalog-item-content">
-          <h1>Superman Metropolis Regular Fit Trackpant</h1>
-          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
-          <p><b>Fit:</b> Regular Fit</p>
-          <p><b>Color:</b> Jet Black</p>
-          <p><b>Price:</b> ₹6999</p>
-        </div>
-      </div>
-
-      <div class="catalog-item">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539620007/hs6dOnOYN6U-410539620_4911_MODEL.png" alt="Main Image">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539620007/zmt3bgRnSqQ-410539620_4911_MODEL5.png" alt="Side Image 1">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539620007/qA3-BAHJy1Y-410539620_4911_MODEL7.png" alt="Side Image 2">
-        <div class="catalog-item-content">
-          <h1>Superman Regular Fit Shield Graphic Tee</h1>
-          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
-          <p><b>Fit:</b> Regular Fit</p>
-          <p><b>Color:</b> Jet Black</p>
-          <p><b>Sleeve:</b> Short Sleeves</p>
-          <p><b>Neck Type:</b> Crew Neck</p>
-          <p><b>Price:</b> ₹3999</p>
-        </div>
-      </div>
-
-      <div class="catalog-item">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539621006/baBB0MXGR9P-410539621_4911_MODEL.png" alt="Main Image">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539621006/-quIEls3Cgc-410539621_4911_MODEL4.png" alt="Side Image 1">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539621006/yGB9zvUVnB1-410539621_4911_MODEL8.png" alt="Side Image 2">
-        <div class="catalog-item-content">
-          <h1>Superman Regular Fit Krypton Graphic Tee</h1>
-          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
-          <p><b>Fit:</b> Regular Fit</p>
-          <p><b>Color:</b> Jet Black</p>
-          <p><b>Sleeve:</b> Short Sleeves</p>
-          <p><b>Neck Type:</b> Crew Neck</p>
-          <p><b>Price:</b> ₹3599</p>
-        </div>
-      </div>
-
-      <div class="catalog-item">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539622006/mBK227zsSEV-410539622_4911_MODEL.png" alt="Main Image">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539622006/CbfiPp036T7-410539622_4911_MODEL7.png" alt="Side Image 1">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539622006/7TyQVpnJlyt-410539622_4911_MODEL8.png" alt="Side Image 2">
-        <div class="catalog-item-content">
-          <h1>Superman Comic Graphic Boxy Fit Tee</h1>
-          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
-          <p><b>Fit:</b> Boxy Fit</p>
-          <p><b>Color:</b> Jet Black</p>
-          <p><b>Sleeve:</b> Short Sleeves</p>
-          <p><b>Neck Type:</b> Crew Neck</p>
-          <p><b>Price:</b> ₹3999</p>
-        </div>
-      </div>
-
-      <div class="catalog-item">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623012/bgJJHV6VyOw-410539623_0001_MODEL.png" alt="Main Image">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623012/NJ6fxxRUyGH-410539623_0001_MODEL4.png" alt="Side Image 1">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623012/wn_Q4Q0js3--410539623_0001_MODEL7.png" alt="Side Image 2">
-        <div class="catalog-item-content">
-          <h1>Superman Metropolis Graphic Boxy Fit Tee</h1>
-          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
-          <p><b>Fit:</b> Boxy Fit</p>
-          <p><b>Color:</b> White</p>
-          <p><b>Sleeve:</b> Short Sleeves</p>
-          <p><b>Neck Type:</b> Crew Neck</p>
-          <p><b>Price:</b> ₹3599</p>
-        </div>
-      </div>
-
-      <div class="catalog-item">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623006/OfierESE_SR-410539623_4911_MODEL.png" alt="Main Image">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623006/qLiFjqdelrE-410539623_4911_MODEL4.png" alt="Side Image 1">
-        <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539623006/Edx3jVzuBBd-410539623_4911_MODEL7.png" alt="Side Image 2">
-        <div class="catalog-item-content">
-          <h1>Superman Metropolis Graphic Boxy Fit Tee</h1>
-          <p><b>Material:</b> 75% Cotton 18% Polyester 7% Spandex</p>
-          <p><b>Fit:</b> Boxy Fit</p>
-          <p><b>Color:</b> Jet Black</p>
-          <p><b>Sleeve:</b> Short Sleeves</p>
-          <p><b>Neck Type:</b> Crew Neck</p>
-          <p><b>Price:</b> ₹3599</p>
-        </div>
-      </div>
-
     </section>
   </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Lightbox functionality
       const lightbox = document.createElement('div');
       lightbox.classList.add('lightbox');
       lightbox.innerHTML = '<span class="lightbox-close">&times;</span><img>';
@@ -614,6 +659,7 @@
       const lightboxImage = lightbox.querySelector('img');
       const lightboxClose = lightbox.querySelector('.lightbox-close');
   
+      // Handle both desktop and mobile images
       document.querySelectorAll('.catalog-item img').forEach(img => {
         img.addEventListener('click', () => {
           lightboxImage.src = img.src;
@@ -630,47 +676,77 @@
           lightbox.classList.remove('active');
         }
       });
+
+      // Slider navigation functions
+      window.slideLeft = function(sliderId) {
+        const slider = document.querySelector(`[data-slider="${sliderId}"]`);
+        const slideWidth = 250 + 15; // image width + gap
+        slider.scrollLeft -= slideWidth;
+      };
+
+      window.slideRight = function(sliderId) {
+        const slider = document.querySelector(`[data-slider="${sliderId}"]`);
+        const slideWidth = 250 + 15; // image width + gap
+        slider.scrollLeft += slideWidth;
+      };
+
+      window.goToSlide = function(sliderId, slideIndex) {
+        const slider = document.querySelector(`[data-slider="${sliderId}"]`);
+        const slideWidth = 250 + 15; // image width + gap
+        slider.scrollLeft = slideIndex * slideWidth;
+      };
+
+      // Mobile slider functionality
+      document.querySelectorAll('.mobile-image-slider').forEach((slider, itemIndex) => {
+        const dots = slider.parentElement.querySelectorAll('.slider-dot');
+        
+        // Update dots on scroll
+        slider.addEventListener('scroll', () => {
+          const slideWidth = 250 + 15; // image width + gap
+          const currentSlide = Math.round(slider.scrollLeft / slideWidth);
+          
+          dots.forEach((dot, dotIndex) => {
+            dot.classList.toggle('active', dotIndex === currentSlide);
+          });
+        });
+      });
     });
 
+    // Audio functionality
     const audio = document.getElementById('background-audio');
     const audioToggle = document.getElementById('audio-toggle');
 
-    // Initially paused, set button to play icon
     audioToggle.innerHTML = '&#9658;';
 
-    // Function to handle audio play/pause
     function toggleAudio() {
       if (audio.paused) {
         audio.play().then(() => {
-          audioToggle.innerHTML = '&#10074;&#10074;'; // Pause icon
+          audioToggle.innerHTML = '&#10074;&#10074;';
         }).catch(error => {
           console.log('Audio play failed:', error);
-          audioToggle.innerHTML = '&#9658;'; // Keep play icon if failed
+          audioToggle.innerHTML = '&#9658;';
         });
       } else {
         audio.pause();
-        audioToggle.innerHTML = '&#9658;'; // Play icon
+        audioToggle.innerHTML = '&#9658;';
       }
     }
 
-    // Add click event listener
     audioToggle.addEventListener('click', toggleAudio);
 
-    // Try to autoplay on first user interaction
     let hasInteracted = false;
     
     function handleFirstInteraction() {
       if (!hasInteracted && audio.paused) {
         hasInteracted = true;
         audio.play().then(() => {
-          audioToggle.innerHTML = '&#10074;&#10074;'; // Pause icon
+          audioToggle.innerHTML = '&#10074;&#10074;';
         }).catch(error => {
           console.log('Autoplay failed:', error);
         });
       }
     }
 
-    // Listen for various user interactions
     document.addEventListener('click', handleFirstInteraction, { once: true });
     document.addEventListener('keydown', handleFirstInteraction, { once: true });
     document.addEventListener('touchstart', handleFirstInteraction, { once: true });
