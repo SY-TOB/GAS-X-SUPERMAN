@@ -373,18 +373,18 @@
         display: block !important;
         margin-bottom: 15px;
         background: transparent;
+        position: relative;
       }
 
       .mobile-image-slider {
         display: flex;
         overflow-x: auto;
         scroll-behavior: smooth;
-        gap: 15px;
-        padding: 15px;
+        gap: 0;
+        padding: 15px 0;
         scrollbar-width: none;
         -ms-overflow-style: none;
         background: transparent;
-        position: relative;
       }
 
       .mobile-image-slider::-webkit-scrollbar {
@@ -392,15 +392,16 @@
       }
 
       .mobile-image-slider img {
-        flex: 0 0 250px;
-        height: 320px;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 400px;
         object-fit: cover;
         border-radius: 10px;
         cursor: pointer;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       }
 
-      /* Navigation Arrows for Mobile */
+      /* Navigation Arrows for Mobile - Fixed Position */
       .slider-nav {
         position: absolute;
         top: 50%;
@@ -425,11 +426,11 @@
       }
 
       .slider-nav.prev {
-        left: 20px;
+        left: 5px;
       }
 
       .slider-nav.next {
-        right: 20px;
+        right: 5px;
       }
 
       .slider-dots {
@@ -526,12 +527,12 @@
         
         <!-- Mobile Slider (Hidden on Desktop) -->
         <div class="mobile-slider-container">
+          <button class="slider-nav prev" onclick="slideLeft(0)">‹</button>
+          <button class="slider-nav next" onclick="slideRight(0)">›</button>
           <div class="mobile-image-slider" data-slider="0">
-            <button class="slider-nav prev" onclick="slideLeft(0)">‹</button>
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/MmC7hkdpc-410539613_4911_MODEL.png" alt="Main Image">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/aaINPEBA0k-410539613_4911_MODEL4.jpg" alt="Side Image 1">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539613006/EEc919xUhs-410539613_4911_MODEL7.jpg" alt="Side Image 2">
-            <button class="slider-nav next" onclick="slideRight(0)">›</button>
           </div>
           <div class="slider-dots">
             <span class="slider-dot active" onclick="goToSlide(0, 0)"></span>
@@ -559,12 +560,12 @@
         
         <!-- Mobile Slider (Hidden on Desktop) -->
         <div class="mobile-slider-container">
+          <button class="slider-nav prev" onclick="slideLeft(1)">‹</button>
+          <button class="slider-nav next" onclick="slideRight(1)">›</button>
           <div class="mobile-image-slider" data-slider="1">
-            <button class="slider-nav prev" onclick="slideLeft(1)">‹</button>
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/GyCfoF5uyK-410539614_0001_MODEL.jpg" alt="Main Image">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/nPfQJt6h1s-410539614_0001_MODEL4.jpg" alt="Side Image 1">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539614006/HRPv4MP2im-410539614_0001_MODEL7.jpg" alt="Side Image 2">
-            <button class="slider-nav next" onclick="slideRight(1)">›</button>
           </div>
           <div class="slider-dots">
             <span class="slider-dot active" onclick="goToSlide(1, 0)"></span>
@@ -592,15 +593,17 @@
         
         <!-- Mobile Slider (Hidden on Desktop) -->
         <div class="mobile-slider-container">
-          <div class="mobile-image-slider">
+          <button class="slider-nav prev" onclick="slideLeft(2)">‹</button>
+          <button class="slider-nav next" onclick="slideRight(2)">›</button>
+          <div class="mobile-image-slider" data-slider="2">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/6fWkPKaUsW-410539615_0001_MODEL.jpg" alt="Main Image">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/aVOA0HX6map-410539615_0001_MODEL4.png" alt="Side Image 1">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539615006/vK0Oex3Npu5-410539615_0001_MODEL7.jpg" alt="Side Image 2">
           </div>
           <div class="slider-dots">
-            <span class="slider-dot active"></span>
-            <span class="slider-dot"></span>
-            <span class="slider-dot"></span>
+            <span class="slider-dot active" onclick="goToSlide(2, 0)"></span>
+            <span class="slider-dot" onclick="goToSlide(2, 1)"></span>
+            <span class="slider-dot" onclick="goToSlide(2, 2)"></span>
           </div>
         </div>
 
@@ -622,15 +625,17 @@
         <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/yJaGlBRcjQN-410539616_4911_MODEL8.png" alt="Side Image 2">
         
         <div class="mobile-slider-container">
-          <div class="mobile-image-slider">
+          <button class="slider-nav prev" onclick="slideLeft(3)">‹</button>
+          <button class="slider-nav next" onclick="slideRight(3)">›</button>
+          <div class="mobile-image-slider" data-slider="3">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/C7siKBHzjKD-410539616_4911_MODEL.png" alt="Main Image">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/m1vo1cxoW6i-410539616_4911_MODEL5.png" alt="Side Image 1">
             <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000410539616006/yJaGlBRcjQN-410539616_4911_MODEL8.png" alt="Side Image 2">
           </div>
           <div class="slider-dots">
-            <span class="slider-dot active"></span>
-            <span class="slider-dot"></span>
-            <span class="slider-dot"></span>
+            <span class="slider-dot active" onclick="goToSlide(3, 0)"></span>
+            <span class="slider-dot" onclick="goToSlide(3, 1)"></span>
+            <span class="slider-dot" onclick="goToSlide(3, 2)"></span>
           </div>
         </div>
 
@@ -680,19 +685,19 @@
       // Slider navigation functions
       window.slideLeft = function(sliderId) {
         const slider = document.querySelector(`[data-slider="${sliderId}"]`);
-        const slideWidth = 250 + 15; // image width + gap
+        const slideWidth = slider.clientWidth; // Full width
         slider.scrollLeft -= slideWidth;
       };
 
       window.slideRight = function(sliderId) {
         const slider = document.querySelector(`[data-slider="${sliderId}"]`);
-        const slideWidth = 250 + 15; // image width + gap
+        const slideWidth = slider.clientWidth; // Full width
         slider.scrollLeft += slideWidth;
       };
 
       window.goToSlide = function(sliderId, slideIndex) {
         const slider = document.querySelector(`[data-slider="${sliderId}"]`);
-        const slideWidth = 250 + 15; // image width + gap
+        const slideWidth = slider.clientWidth; // Full width
         slider.scrollLeft = slideIndex * slideWidth;
       };
 
@@ -702,7 +707,7 @@
         
         // Update dots on scroll
         slider.addEventListener('scroll', () => {
-          const slideWidth = 250 + 15; // image width + gap
+          const slideWidth = slider.clientWidth; // Full width
           const currentSlide = Math.round(slider.scrollLeft / slideWidth);
           
           dots.forEach((dot, dotIndex) => {
